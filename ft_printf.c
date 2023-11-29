@@ -19,14 +19,17 @@ int ft_printf(const char *s, ...) {
   i = 0;
   while (s[i]) {
     if (s[i] == '%') {
-      if (s[i + 1] == 's') {
+      if (s[i + 1] == 's') 
         ft_putstr(va_arg(arg, const char *));
-        if (s[i + 1] == 'd')
-          ft_putnbr(va_arg(arg, const char *));
-      }
+      if (s[i + 1] == 'd')
+          ft_putnbr(va_arg(arg, int));
+      if (s[i + 1] == 'c')
+          ft_putchar(va_arg(arg, int));
+      if (s[i + 1] == '%')
+          ft_putchar('%');
     }
     if (s[i] == '%')
-      i += 2;
+      i += 1;
     write(1, &s[i], 1);
     i++;
   }
@@ -37,5 +40,7 @@ int ft_printf(const char *s, ...) {
 
 int main() {
   char s[] = "adam";
-  ft_printf("55%skhobba", s);
+  char c = 'x';
+  int d = 100;
+  ft_printf("%s khobba%d %c", s,d,c);
 }

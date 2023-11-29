@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void ft_putnbr(int n, int fd) {
+void ft_putnbr(int n) {
   long nbr;
 
   nbr = n;
@@ -27,4 +27,4 @@ void ft_putnbr(int n, int fd) {
     ft_putchar(nbr + 48);
 }
 
-int main() { ft_putnbr(-21447483648); }
+//int main() { ft_putnbr(-21447483648); }
