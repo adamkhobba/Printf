@@ -23,7 +23,7 @@ int ft_putstr(const char *s) {
   }
   return (i);
 }
-int main ()
-{
-  printf("\n%d",ft_putstr("adaf")); 
-}
+// int main ()
+// {
+//   printf("\n%d",ft_putstr("adaf")); 
+// }

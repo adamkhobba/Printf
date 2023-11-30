@@ -17,18 +17,19 @@ static void  ft_condi(va_list arg, const char *s, int i)
       if (s[i + 1] == 's') 
         ft_putstr(va_arg(arg, const char *));
       if (s[i + 1] == 'd' || s[i + 1] == 'i')
-          ft_putnbr(va_arg(arg, int));
+          ft_putnbr_base(va_arg(arg, int),"0123456789");
       if (s[i + 1] == 'c')
           ft_putchar(va_arg(arg, int));
       if (s[i + 1] == '%')
         ft_putchar('%');
-      // if (s[i + 1] == 'c')
-      //     ft_putchar(va_arg(arg, int));
+       if (s[i + 1] == 'u')
+           ft_putnbr_base(va_arg(arg, int),"0123456789");
       // if (s[i + 1] == 'c')
       //     ft_putchar(va_arg(arg, int));
       // if (s[i + 1] == 'c')
       //     ft_putchar(va_arg(arg, int));
 }
+
 static void  ft_realy(va_list arg, const char *s) 
 {
   int i;

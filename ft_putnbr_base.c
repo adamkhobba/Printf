@@ -50,11 +50,9 @@ int	ft_check_base(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int  ft_putnbr_base(long n, char *base)
 {
-	long	n;
-
-	n = nbr;
+  int i;
 	if (ft_check_base(base) != 0)
 	{
 		if (n < 0)
@@ -62,7 +60,7 @@ void	ft_putnbr_base(int nbr, char *base)
 			ft_putchar('-');
 			n = -n;
 		}
-		if (n >= ft_strlen(base))
+		if (n >= (long)ft_strlen(base))
 		{
 			ft_putnbr_base (n / ft_strlen(base), base);
 			ft_putnbr_base (n % ft_strlen(base), base);
@@ -72,8 +70,11 @@ void	ft_putnbr_base(int nbr, char *base)
 			ft_putchar(base[n]);
 		}
 	}
+	i = ft_count(n);
+	return (i);
 }
-int main() 
-{
-  ft_putnbr_base(10000,"0123456789");
-}
+// int main() 
+// {
+//   int n =ft_putnbr_base(10000,"0123456789");
+//   printf("%d",n);
+// }

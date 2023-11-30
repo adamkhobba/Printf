@@ -19,7 +19,8 @@
 
 int ft_printf(const char *format, ...);
 int   ft_putstr(const char *s);
-// int ft_putnbr(long n);
 int ft_putchar(char c);
+int  ft_putnbr_base(long n, char *base);
+size_t  ft_strlen(char *s);
 
 #endif

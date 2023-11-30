@@ -14,10 +14,10 @@ NAME = ft_printf.a
 
 CFLAGS = -Wall -Wextra -Werror 
 
-SRC = ft_putnbr.c \
+SRC = ft_putnbr_base.c \
 			ft_putchar.c\
-			ft_putstr.c
-
+			ft_putstr.c \
+			ft_strlen.c
 OBJ = $(SRC:.c=.o) 
 
 all : $(NAME)
