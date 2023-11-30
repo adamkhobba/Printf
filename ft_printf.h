@@ -17,9 +17,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int ft_printf(const char *, ...);
-void ft_putstr(const char *s);
-void ft_putnbr(int n);
-void ft_putchar(char c);
+int ft_printf(const char *format, ...);
+int   ft_putstr(const char *s);
+// int ft_putnbr(long n);
+int ft_putchar(char c);
 
 #endif

@@ -12,19 +12,68 @@
 
 #include "ft_printf.h"
 
-void ft_putnbr(int n) {
-  long nbr;
+static int ft_count(long n)
+{
+  int i;
 
-  nbr = n;
-  if (nbr < 0) {
-    nbr *= -1;
-    ft_putchar('-');
+  i = 1;
+  while (n/10)
+  {
+    n /= 10;
+    i++;
   }
-  if (nbr > 9) {
-    ft_putnbr(nbr / 10);
-    ft_putnbr(nbr % 10);
-  } else
-    ft_putchar(nbr + 48);
+  return (i);
 }
 
-//int main() { ft_putnbr(-21447483648); }
+int	ft_check_base(char *base)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (base[0] == '\0')
+		return (0);
+	if (base[1] == '\0')
+		return (0);
+	i = 0;
+	while (base[i])
+	{
+		j = i + 1;
+		while (base[j])
+		{
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+void	ft_putnbr_base(int nbr, char *base)
+{
+	long	n;
+
+	n = nbr;
+	if (ft_check_base(base) != 0)
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n = -n;
+		}
+		if (n >= ft_strlen(base))
+		{
+			ft_putnbr_base (n / ft_strlen(base), base);
+			ft_putnbr_base (n % ft_strlen(base), base);
+		}
+		else
+		{
+			ft_putchar(base[n]);
+		}
+	}
+}
+int main() 
+{
+  ft_putnbr_base(10000,"0123456789");
+}
