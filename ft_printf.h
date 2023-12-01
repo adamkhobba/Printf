@@ -18,11 +18,11 @@
 #include <unistd.h>
 
 int ft_printf(const char *format, ...);
-int   ft_putstr(const char *s);
+int ft_putstr(const char *s);
 int ft_putchar(char c);
-int  ft_putnbr_base(long n, char *base);
-size_t  ft_strlen(char *s);
-int  ft_putunsigend_nbr(long long n);
+int ft_putnbr_base(long n, char *base);
+size_t ft_strlen(char *s);
+int ft_putunsigend_nbr(long long n);
 int ft_count(long n);
 int ft_putpointer(void *p);
 

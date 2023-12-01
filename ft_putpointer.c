@@ -12,22 +12,20 @@
 
 #include "ft_printf.h"
 
-
-int ft_putpointer(void *p)
-{
+int ft_putpointer(void *p) {
   int n;
 
   ft_putstr("0x");
   n = ft_putnbr_base((long)p, "0123456789abcdef");
   return (n);
 }
-int main()
-{
-  int a;
-  int *p;
-
-  a = 2;
-  p = &a;
-  ft_putpointer(p);
-  printf("\n%p",p);
-}
+// int main()
+// {
+//   int a;
+//   int *p;
+//
+//   a = 2;
+//   p = &a;
+//   ft_putpointer(p);
+//   printf("\n%p",p);
+// }
