@@ -19,13 +19,15 @@ int ft_putpointer(void *p) {
   n = ft_putnbr_base((long)p, "0123456789abcdef");
   return (n);
 }
-// int main()
-// {
+// int main() {
 //   int a;
 //   int *p;
 //
 //   a = 2;
 //   p = &a;
-//   ft_putpointer(p);
-//   printf("\n%p",p);
+//   int f = ft_putpointer(p);
+//   printf("\n%d", f);
+//
+//   int g = printf("\n%p", p);
+//   printf("\n%d", g);
 // }

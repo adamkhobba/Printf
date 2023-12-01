@@ -51,8 +51,7 @@ int ft_putnbr_base(long n, char *base) {
   i = ft_count(n);
   return (i);
 }
-// int main()
-// {
-//   int n =ft_putnbr_base(10000,"0123456789");
-//   printf("%d",n);
-// }
+int main() {
+  int n = ft_putnbr_base(10000, "0123456789");
+  printf("%d", n);
+}

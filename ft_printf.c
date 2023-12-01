@@ -20,31 +20,31 @@ static int  ft_condi(va_list arg, const char *s, int i)
   switch(s[i + 1])
   {
     case 's':
-      n += ft_putstr(va_arg(arg, const char *));
+      ft_putstr(va_arg(arg, const char *));
       break;
     case 'd':
-      n +=ft_putnbr_base(va_arg(arg, int),"0123456789");
+      ft_putnbr_base(va_arg(arg, int),"0123456789");
       break;
     case 'i':
-      n += ft_putnbr_base(va_arg(arg, int),"0123456789");
+      ft_putnbr_base(va_arg(arg, int),"0123456789");
       break;
     case 'c':
-      n += ft_putchar(va_arg(arg, int));
+      ft_putchar(va_arg(arg, int));
       break;
     case 'u':
-      n += ft_putnbr_base((unsigned int )va_arg(arg, int), "0123456789");
+      ft_putnbr_base((unsigned int )va_arg(arg, int), "0123456789");
       break; 
     case 'p': 
-      n += ft_putpointer(va_arg(arg, void *));
+     ft_putpointer(va_arg(arg, void *));
       break;
     case 'x':
-      n += ft_putnbr_base(va_arg(arg, int), "0123456789abcedf");
+     ft_putnbr_base(va_arg(arg, int), "0123456789abcedf");
       break;
     case 'X':
-      n += ft_putnbr_base(va_arg(arg, int), "0123456789ABCDEF");
+     ft_putnbr_base(va_arg(arg, int), "0123456789ABCDEF");
       break;
     case '%':
-      n += ft_putchar('%');
+     ft_putchar('%');
       break;
     default:
       return (0);
@@ -52,15 +52,15 @@ static int  ft_condi(va_list arg, const char *s, int i)
   return (n);
 }
 
-static void  ft_realy(va_list arg, const char *s) 
+static int  ft_realy(va_list arg, const char *s) 
 {
   int i;
-
+  int n;
   i = 0;
   while (s[i]) 
   {
     if (s[i] == '%') 
-      ft_condi(arg,s,i);
+      n = ft_condi(arg,s,i);
     if (s[i] == '%')
     { 
       i += 2;
@@ -69,14 +69,17 @@ static void  ft_realy(va_list arg, const char *s)
     }
     write(1, &s[i++], 1);
   }
+  return (n);
 }
 
 int ft_printf(const char *s, ...) {
+  int n;
   va_list arg;
+
   va_start(arg, s);
-  ft_realy(arg,s);
+  n = ft_realy(arg,s);
   va_end(arg);
-  return 1;
+  return (n);
 }
 
 int main() {
@@ -84,7 +87,9 @@ int main() {
   char c = 'x';
   int d = 230;
   int *p = &d;
-  ft_printf("%d%%%s%p",d,s,p);
-  printf("\n");
-  printf("%d%%%s%p",d,s,p);
+  ft_printf("%d",d);
+  // ft_printf("\n%d",f);
+  // printf("\n");
+  // int n = printf("%d",d);
+  // printf("\n%d",n);
 }
