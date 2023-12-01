@@ -14,20 +14,22 @@
 
 static void  ft_condi(va_list arg, const char *s, int i)
 {
-      if (s[i + 1] == 's') 
-        ft_putstr(va_arg(arg, const char *));
-      if (s[i + 1] == 'd' || s[i + 1] == 'i')
-          ft_putnbr_base(va_arg(arg, int),"0123456789");
-      if (s[i + 1] == 'c')
-          ft_putchar(va_arg(arg, int));
-      if (s[i + 1] == '%')
-        ft_putchar('%');
-       if (s[i + 1] == 'u')
-           ft_putnbr_base(va_arg(arg, int),"0123456789");
-      // if (s[i + 1] == 'c')
-      //     ft_putchar(va_arg(arg, int));
-      // if (s[i + 1] == 'c')
-      //     ft_putchar(va_arg(arg, int));
+  if (s[i + 1] == 's') 
+    ft_putstr(va_arg(arg, const char *));
+  if (s[i + 1] == 'd' || s[i + 1] == 'i')
+    ft_putnbr_base(va_arg(arg, int),"0123456789");
+  if (s[i + 1] == 'c')
+    ft_putchar(va_arg(arg, int));
+  if (s[i + 1] == '%')
+    ft_putchar('%');
+  if (s[i + 1] == 'u')
+    ft_putnbr_base((unsigned int )va_arg(arg, int), "0123456789");
+  if (s[i + 1] == 'x')
+   ft_putnbr_base(va_arg(arg, int), "0123456789abcedf");
+  if (s[i + 1] == 'X')
+    ft_putnbr_base(va_arg(arg, int), "0123456789ABCDEF");
+  if (s[i + 1] == 'p')
+    ft_putpointer(va_arg(arg, void *));
 }
 
 static void  ft_realy(va_list arg, const char *s) 
@@ -42,7 +44,7 @@ static void  ft_realy(va_list arg, const char *s)
     if (s[i] == '%')
     { 
       i += 2;
-      if (s[i] == '%') 
+      if (s[i] == '%')
         continue;
     }
     write(1, &s[i++], 1);
@@ -60,8 +62,9 @@ int ft_printf(const char *s, ...) {
 int main() {
   char s[] = "adam";
   char c = 'x';
-  int d = 100;
-  printf("%s%d%c\\t%d%%",s,d,c,d);
+  int d = 230;
+  int *p = &d;
+  ft_printf("%d%%%p",d,p);
   printf("\n");
-  printf("%s%d%c\\t%d%%",s,d,c,d);
+  printf("%d%%%p",d,p);
 }
