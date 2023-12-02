@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:17:05 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/28 15:17:10 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/12/02 21:54:07 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int ft_printf(const char *format, ...);
 int ft_putstr(const char *s);
 int ft_putchar(char c);
-int ft_putnbr_base(long n, char *base);
+int ft_putnbr_base(long long n, char *base);
 size_t ft_strlen(char *s);
 int ft_putunsigend_nbr(long long n);
 int ft_count(long n);

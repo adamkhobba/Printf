@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:17:47 by akhobba           #+#    #+#             */
-/*   Updated: 2023/11/28 15:17:51 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/12/02 21:52:09 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@ int ft_putstr(const char *s) {
   int i;
 
   i = 0;
-  while (s[i]) {
-    write(1, &s[i], 1);
-    i++;
-  }
-  return (i);
+	if (NULL == s)
+	{	
+		i = 6;
+		write(1, "(null)", 6);
+		return (i);
+	}
+	while (s[i]) 
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }
 // int main() { ft_putstr(NULL); }
