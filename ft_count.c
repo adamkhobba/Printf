@@ -12,15 +12,15 @@
 
 #include "ft_printf.h"
 
-int ft_count(long n)
+int	ft_count(long n)
 {
-  int i;
+	int	i;
 
-  i = 1;
-  while (n/10)
-  {
-    n /= 10;
-    i++;
-  }
-  return (i);
+	i = 1;
+	while (n / 10)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }

@@ -12,12 +12,13 @@
 
 #include "ft_printf.h"
 
-int ft_putpointer(void *p) {
-  int n;
+int	ft_putpointer(void *p)
+{
+	int	n;
 
-  ft_putstr("0x");
-  n = ft_putnbr_base((long)p, "0123456789abcdef");
-  return (n);
+	ft_putstr("0x");
+	n = ft_putnbr_base((long)p, "0123456789abcdef");
+	return (n);
 }
 // int main() {
 //   int a;
