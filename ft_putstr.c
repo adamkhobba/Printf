@@ -22,4 +22,4 @@ int ft_putstr(const char *s) {
   }
   return (i);
 }
-int main() { ft_putstr(NULL); }
+// int main() { ft_putstr(NULL); }
