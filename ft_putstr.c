@@ -12,19 +12,14 @@
 
 #include "ft_printf.h"
 
-int	ft_putstr(const char *s)
-{
-	int	i;
+int ft_putstr(const char *s) {
+  int i;
 
-	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+  i = 0;
+  while (s[i]) {
+    write(1, &s[i], 1);
+    i++;
+  }
+  return (i);
 }
-// int main ()
-// {
-//   printf("\n%d",ft_putstr("adaf"));
-// }
+int main() { ft_putstr(NULL); }

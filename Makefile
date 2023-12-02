@@ -21,8 +21,8 @@ SRC = ft_putnbr_base.c \
 			ft_putstr.c \
 			ft_strlen.c \
 			ft_count.c \
-			ft_putpointer.c
-
+			ft_putpointer.c\
+			ft_printf.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
