@@ -1,15 +1,18 @@
 #include "ft_printf.h"
 
-int main(void) {
+int main(void) 
+{
   int f;
   char s[] = "fock";
   int n;
   int n1;
 
-  f = -1;
-  printf("%d",ft_printf("%p", NULL));
-  printf("\n");
-  printf("%d",printf("%p", NULL));
+  	f = -1;
+  	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% 
+   	%c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+  	printf("\n");
+	printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% 
+	%c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
   // n = ft_printf("%s%d", s, f);
   // ft_printf("\nn = %d\n", n);
   // n1 = printf("%s%d", s);

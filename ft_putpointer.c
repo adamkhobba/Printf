@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:17:34 by akhobba           #+#    #+#             */
-/*   Updated: 2023/12/02 22:14:57 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/12/03 12:00:52 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putpointer(void *p)
 	int	n;
 
 	ft_putstr("0x");
-	n = ft_putnbr_base((long)p, "0123456789abcdef");
+	n = ft_puthex_p((unsigned long)p, "0123456789abcdef");
 	return (n + 2);
 }
 // int main() {

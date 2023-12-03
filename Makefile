@@ -6,7 +6,7 @@
 #    By: akhobba <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 15:17:55 by akhobba           #+#    #+#              #
-#    Updated: 2023/11/28 15:18:02 by akhobba          ###   ########.fr        #
+#    Updated: 2023/12/03 11:59:18 by akhobba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,12 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = ft_putnbr_base.c \
 			ft_putchar.c\
 			ft_putstr.c \
+			ft_printf.c\
 			ft_strlen.c \
 			ft_count.c \
 			ft_putpointer.c\
-			ft_printf.c
+		ft_puthex.c\
+		ft_puthex_p.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)

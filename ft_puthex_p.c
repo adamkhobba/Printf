@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_number.c                                        :+:      :+:    :+:   */
+/*   ft_puthex_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 15:17:18 by akhobba           #+#    #+#             */
-/*   Updated: 2023/12/03 11:45:24 by akhobba          ###   ########.fr       */
+/*   Created: 2023/12/03 11:55:16 by akhobba           #+#    #+#             */
+/*   Updated: 2023/12/03 11:58:53 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
 
-int    ft_putnbr_base(long long  n, char *base)
+int    ft_puthex_p(unsigned long nbr, char *base)
 {
 	int	i;
+	unsigned long n;
 
+	n = (unsigned long)nbr;
 		i = 0;
 		if (n < 0)
 		{
@@ -23,7 +24,7 @@ int    ft_putnbr_base(long long  n, char *base)
 			n *= -1;
 			i++;
 		}
-		if (n >= (long)ft_strlen(base))
+		if (n >= (unsigned long)ft_strlen(base))
 		{
 			i += ft_putnbr_base(n / ft_strlen(base), base);
 			i += ft_putnbr_base(n % ft_strlen(base), base);
@@ -34,12 +35,3 @@ int    ft_putnbr_base(long long  n, char *base)
 		}
 	return (i);
 }
-/*
-int main()
-{
-	int i;
-
-	i = 0;
-	int n = ft_putnbr_base(-234,"0123456789abcef");
-	printf("\n%d", n);
-}*/

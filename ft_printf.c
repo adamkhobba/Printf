@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:26:11 by akhobba           #+#    #+#             */
-/*   Updated: 2023/12/02 21:59:26 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/12/03 12:13:21 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ static int ft_condi(va_list arg, const char *s, int i) {
     n += ft_putchar(va_arg(arg, int));
   if (s[i + 1] == 'u')
     n += ft_putnbr_base((unsigned int)va_arg(arg, int), "0123456789");
-  if (s[i + 1] == 'p')
-    n += ft_putpointer(va_arg(arg, void *));
+  if (s[i + 1] == 'p') n += ft_putpointer(va_arg(arg, void *));
   if (s[i + 1] == 'x')
-    n += ft_putnbr_base(va_arg(arg, int), "0123456789abcedf");
+    n += ft_puthex(va_arg(arg, int), "0123456789abcedf");
   if (s[i + 1] == 'X')
-    n += ft_putnbr_base(va_arg(arg, int), "0123456789ABCDEF");
+    n += ft_puthex(va_arg(arg, int), "0123456789ABCDEF");
   if (s[i + 1] == '%')
     n += ft_putchar('%');
   return (n);

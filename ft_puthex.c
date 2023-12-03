@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_number.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 15:17:18 by akhobba           #+#    #+#             */
-/*   Updated: 2023/12/03 11:45:24 by akhobba          ###   ########.fr       */
+/*   Created: 2023/12/03 11:38:55 by akhobba           #+#    #+#             */
+/*   Updated: 2023/12/03 12:19:10 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int    ft_putnbr_base(long long  n, char *base)
+int	ft_puthex(unsigned int nb, char *base)
 {
-	int	i;
+	int		count;
 
-		i = 0;
-		if (n < 0)
-		{
-			ft_putchar('-');
-			n *= -1;
-			i++;
-		}
-		if (n >= (long)ft_strlen(base))
-		{
-			i += ft_putnbr_base(n / ft_strlen(base), base);
-			i += ft_putnbr_base(n % ft_strlen(base), base);
-		}
-		else
-		{
-			i += ft_putchar(base[n]);
-		}
-	return (i);
+	count = 0;
+	if (nb >= 16)
+	{
+		count += ft_puthex(nb / 16, base);
+		count += ft_puthex(nb % 16, base);
+	}
+	else
+	{
+		count += ft_putchar(base[nb]);
+	}
+	return (count);
 }
 /*
-int main()
+int main ()
 {
-	int i;
-
-	i = 0;
-	int n = ft_putnbr_base(-234,"0123456789abcef");
-	printf("\n%d", n);
+	ft_puthex(-1,"0123456789abcdef");
+	printf("\n%x", -1);
 }*/
