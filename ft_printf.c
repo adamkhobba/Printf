@@ -6,7 +6,7 @@
 /*   By: akhobba <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:26:11 by akhobba           #+#    #+#             */
-/*   Updated: 2023/12/03 12:13:21 by akhobba          ###   ########.fr       */
+/*   Updated: 2023/12/03 20:44:47 by akhobba          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int ft_condi(va_list arg, const char *s, int i) {
     n += ft_putnbr_base((unsigned int)va_arg(arg, int), "0123456789");
   if (s[i + 1] == 'p') n += ft_putpointer(va_arg(arg, void *));
   if (s[i + 1] == 'x')
-    n += ft_puthex(va_arg(arg, int), "0123456789abcedf");
+    n += ft_puthex(va_arg(arg, int), "0123456789abcdef");
   if (s[i + 1] == 'X')
     n += ft_puthex(va_arg(arg, int), "0123456789ABCDEF");
   if (s[i + 1] == '%')
@@ -70,3 +70,17 @@ int ft_printf(const char *s, ...) {
   va_end(arg);
   return (n);
 }
+/*
+int main ()
+{
+	int f;
+  	char s[] = "fock";
+  	int n;
+  	int n1;
+
+	f = -1;
+	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	printf("\n");
+	printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	return 0;	
+}*/
