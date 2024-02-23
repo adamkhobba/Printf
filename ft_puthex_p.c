@@ -11,27 +11,17 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_puthex_p(unsigned long nbr, char *base)
-{
-	int				i;
-	unsigned long	n;
+int ft_puthex_p(unsigned long nbr, char *base) {
+  int i;
+  unsigned long n;
 
-	n = (unsigned long)nbr;
-	i = 0;
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n *= -1;
-		i++;
-	}
-	if (n >= (unsigned long)ft_strlen(base))
-	{
-		i += ft_putnbr_base(n / ft_strlen(base), base);
-		i += ft_putnbr_base(n % ft_strlen(base), base);
-	}
-	else
-	{
-		i += ft_putchar(base[n]);
-	}
-	return (i);
+  n = (unsigned long)nbr;
+  i = 0;
+  if (n >= (unsigned long)ft_strlen(base)) {
+    i += ft_putnbr_base(n / ft_strlen(base), base);
+    i += ft_putnbr_base(n % ft_strlen(base), base);
+  } else {
+    i += ft_putchar(base[n]);
+  }
+  return (i);
 }
